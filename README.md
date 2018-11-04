@@ -46,10 +46,10 @@ Xem comment ở starter project
 ## Yêu cầu chung
 - Có thể chơi được ít nhất cho một màn chơi (chiến thắng một màn chơi)
 - Có thể thay đổi được tệp cấu hình khác cho màn chơi (tương tự mẫu cho trước)
-
+https://raw.githubusercontent.com/bqcuong/bomberman-starter/starter-project-1/res/levels/Level1.t
 ## Nhiệm vụ của bạn (tối đa +12đ)
 - Gói bắt buộc (+8đ)
-1. Xây dựng bản đồ màn chơi từ tệp cấu hình (có mẫu tệp cấu hình, xem [tại đây](https://raw.githubusercontent.com/bqcuong/bomberman-starter/starter-project-1/res/levels/Level1.txt)) +2đ
+1. Xây dựng bản đồ màn chơi từ tệp cấu hình (có mẫu tệp cấu hình, xem [tại đây](xt)) +2đ
 2. Di chuyển Bomber theo sự điều khiển từ người chơi +2đ
 3. Tự động di chuyển các Enemy +1đ
 4. Xử lý va chạm cho các đối tượng Bomber, Enemy, Wall, Brick, Bomb +1đ
