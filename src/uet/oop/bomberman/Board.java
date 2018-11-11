@@ -174,6 +174,7 @@ public class Board implements IRender {
 		return null;
 	}
 
+
 	public Bomber getBomber() {
 		Iterator<Character> itr = _characters.iterator();
 		
