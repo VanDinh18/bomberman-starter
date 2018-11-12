@@ -14,7 +14,8 @@ public class BombItem extends Item {
 		// TODO: xử lý Bomber ăn Item
 		return false;
 	}
-	
 
+	@Override
+	public void setValues() {}
 
 }
