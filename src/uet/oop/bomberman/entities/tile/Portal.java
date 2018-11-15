@@ -1,9 +1,11 @@
 package uet.oop.bomberman.entities.tile;
 
 import uet.oop.bomberman.Board;
+import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.graphics.Sprite;
+
 
 public class Portal extends Tile {
 
@@ -16,12 +18,15 @@ public class Portal extends Tile {
 		// TODO: xử lý khi Bomber đi vào
 		if(e instanceof Bomber) {
 
-			if(_board.detectNoEnemies() == false)
-				return false;
+			//if(Game.getBoard().detectNoEnemies() == false) //kiểm tra để cho đi vào Portal
+				//return false;
+
+            if(Game.getBoard().detectNoEnemies() == true) //kiểm tra để cho đi vào Portal
+                return true;
 
 			if(e.getXTile() == getX() && e.getYTile() == getY()) {
-				if(_board.detectNoEnemies())
-					_board.nextLevel();
+				if(Game.getBoard().detectNoEnemies()== false)
+					Game.getBoard().nextLevel();
 			}
 
 			return true;

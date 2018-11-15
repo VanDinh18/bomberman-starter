@@ -29,7 +29,7 @@ public class Game extends Canvas {
 	
 	public static final int TIME = 200;
 	public static final int POINTS = 0;
-	
+
 	protected static int SCREENDELAY = 3;
 
 	protected static int bombRate = BOMBRATE;
@@ -42,8 +42,8 @@ public class Game extends Canvas {
 	private Keyboard _input;
 	private boolean _running = false;
 	private boolean _paused = true;
-	
-	private Board _board;
+	//TODO: thêm static
+	private static Board _board;
 	private Screen screen;
 	private Frame _frame;
 	
@@ -60,8 +60,8 @@ public class Game extends Canvas {
 		_board = new Board(this, _input, screen);
 		addKeyListener(_input);
 	}
-	
-	
+
+
 	private void renderGame() {
 		BufferStrategy bs = getBufferStrategy();
 		if(bs == null) {
@@ -183,7 +183,8 @@ public class Game extends Canvas {
 		_screenDelay = SCREENDELAY;
 	}
 
-	public Board getBoard() {
+	//TODO: Them static
+	public static Board getBoard() {
 		return _board;
 	}
 
