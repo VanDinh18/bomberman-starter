@@ -10,6 +10,7 @@ public abstract class Item extends Tile {
 	}
 
 	//TODO: viet them
+	/*
 	protected int _duration = -1; // -1 is infinite, duration in lifes
 	protected boolean _active = false;
 	protected int _level;
@@ -42,4 +43,5 @@ public abstract class Item extends Tile {
 	public void setActive(boolean active) {
 		this._active = active;
 	}
+	*/
 }

@@ -14,20 +14,14 @@ public class FlameItem extends Item {
 	@Override
 	public boolean collide(Entity e) {
 		// TODO: xử lý Bomber ăn Item
-		System.out.println("kk");
 		if(e instanceof Bomber){
-
-			((Bomber) e).addPowerup(this);
+			if(this.isRemoved())
+				return true;
+			Game.addBombRadius(1);
 			remove();
 			return true;
 		}
 		return false;
 	}
 
-	//TODO: viet them
-	@Override
-	public void setValues() {
-		_active = true;
-		Game.addBombRadius(1);
-	}
 }
