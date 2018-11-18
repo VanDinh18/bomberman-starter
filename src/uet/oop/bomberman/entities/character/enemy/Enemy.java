@@ -8,6 +8,7 @@ import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.character.Character;
 import uet.oop.bomberman.entities.character.enemy.ai.AI;
+import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.level.Coordinates;
@@ -140,6 +141,12 @@ public abstract class Enemy extends Character {
 			((Bomber) e).kill();
 			return false;
 		}
+		//TODO: xử lý va chạm với Enemy khác
+		if(e instanceof Enemy){
+			return false;
+		}
+		//TODO: xử lý va chạm với Brick
+
 		return true;
 	}
 	

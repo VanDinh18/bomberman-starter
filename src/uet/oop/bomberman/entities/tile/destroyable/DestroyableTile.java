@@ -42,6 +42,7 @@ public class DestroyableTile extends Tile {
 		if(e instanceof Flame) {
 			destroy();
 		}
+
 		return false;
 	}
 	

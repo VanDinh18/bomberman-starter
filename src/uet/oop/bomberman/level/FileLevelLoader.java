@@ -5,6 +5,8 @@ import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.LayeredEntity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.character.enemy.Balloon;
+import uet.oop.bomberman.entities.character.enemy.Doria;
+import uet.oop.bomberman.entities.character.enemy.Oneal;
 import uet.oop.bomberman.entities.tile.Grass;
 import uet.oop.bomberman.entities.tile.Portal;
 import uet.oop.bomberman.entities.tile.Wall;
@@ -108,10 +110,15 @@ public class FileLevelLoader extends LevelLoader {
 	public void addLevelEntity(char c, int x, int y){
 	    int pos = x + y * getWidth();
 	    switch(c) {
+            case ' ':
+                _board.addEntity(pos, new Grass(x, y, Sprite.grass) );
+                break;
+
             //them Wall
             case '#':
                 _board.addEntity(pos, new Wall(x, y, Sprite.wall));
                 break;
+
             //them Bomber
             case 'p':
                 _board.addCharacter(new Bomber(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
@@ -125,21 +132,32 @@ public class FileLevelLoader extends LevelLoader {
 				_board.addCharacter( new Balloon(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
 				_board.addEntity(pos, new Grass(x, y, Sprite.grass) );
 				break;
+			case '2':
+				_board.addCharacter(new Oneal(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
+				_board.addEntity(pos, new Grass(x, y, Sprite.grass));
+                break;
+			case '5':
+				_board.addCharacter(new Doria(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
+				_board.addEntity(pos, new Grass(x, y, Sprite.grass));
+				break;
 
 			//them brick
             case '*':
-                _board.addEntity(pos, new LayeredEntity(x, y, new Grass(x, y, Sprite.grass), new Brick(x, y, Sprite.brick)));
+                _board.addEntity(pos, new LayeredEntity(x, y,
+                                new Grass(x, y, Sprite.grass),
+                                new Brick(x, y, Sprite.brick)));
                 break;
 
 			//them portal
 			case 'x':
 				_board.addEntity(x + y * _width,
 						new LayeredEntity(x, y,
-								//new Grass(x, y, Sprite.grass),
+								new Grass(x, y, Sprite.grass),
 								new Portal(x, y, Sprite.portal),
 								new Brick(x, y, Sprite.brick)
 						));
 				break;
+
             // thêm Item kèm Brick che phủ ở trên
             case 's':
                 _board.addEntity(x + y * _width,
